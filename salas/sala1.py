@@ -14,7 +14,6 @@ def juego_ahorcado ():
     palabras_juego = ["timba","blackjack","dados","ruleta","fichas","poker","cartas","apuestas","noche","slots","tragaperras","casino"]
     palabra_seleccionada = (random.choice(palabras_juego))
     lista_palabra = palabra_visible_jugador(palabra_seleccionada)
-    gg = False
     
     #DATOS DEL JUGADOR
     error_max = 5
@@ -32,24 +31,26 @@ def juego_ahorcado ():
     ╰┴╯╵ ╵╰─╴╵ ╵╵╵ ╵╰─╯ ╵ ╰─╯╵ ╵   ╶┴╯╰─╴   ╵╵ ╵╰─╴.                                                        
     """) #logo del juego
 
-    #Logica del juego
+    #Logica del juego - Si el jugador se queda sin intentos, sale del bucle
     while error_max != 0:
 
         print (lista_palabra,"Son",len(palabra_seleccionada),"letras")
-        letra = input("Ingrese una sola letra: ")
-        validacion = validacion_input(letra,letras_usadas) #Funcion para validacion del imput del usuario
-
+        
+        #Ingreso y validacion de input
+        validacion = False
         while validacion == False:
             letra = input("Ingrese una sola letra: ")
-            validacion = validacion_input(letra,letras_usadas)
+            validacion = validacion_input(letra, letras_usadas)
 
+        #Actualiza la lista que muestra al jugador la posicion y cantidad de letras adivinadas. 
+        #Si no adivino ninguna letra, se le resta un intento 
         lista_palabra, error_max = apariciones_letra_en_palabra(letra,palabra_seleccionada,lista_palabra,error_max)
         
-        gg = verif_gg(lista_palabra,palabra_seleccionada) #Verifica si el jugador adivino la palabra
+        #Verifica si el jugador adivino la palabra
+        gg = verif_gg(lista_palabra,palabra_seleccionada) 
         if gg == True:
-            return gg 
+            return gg #Retorna la sala de escape como completada
 
-        #Cuando se comete un error, se le resta 1 a la variable. cuando se queda sin errores sale del bucle
         print ("===================================")
         print ("Intentos restantes:",error_max)
         print ("Letras ya usadas:",letras_usadas)
@@ -60,4 +61,8 @@ def juego_ahorcado ():
     if opcion == 1: #hacemos que la funcion se llame a si misma para que lo vuelva a intentar
         juego_ahorcado()
     else: 
-        return False
+        return False #Retorna la sala de escape como incompleta
+
+# Revisar luego logica del gg. No podemos permitir que si el jugador ya gano esta sala y quiere volver a jugarla pierda su "Marca" de victoria y la sala
+# aparezca nuevamente como incompleta en caso de perder. ¿quizas podria hacer que simplemente no retorne false?. La solucion depende de como se vea el resto del codigo :p
+    

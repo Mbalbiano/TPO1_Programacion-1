@@ -84,8 +84,8 @@ def gameover():
 1) Volver a intentar
 2) Regresar al menú principal
         """)
-    opcion = int(input("Seleccione una opción (1/2): "))
-    while opcion > 2 or opcion < 0:
+    opcion = input("Seleccione una opción (1/2): ")
+    while not opcion.isdigit() or int(opcion) < 1 or int(opcion) > 2:
         print("Seleccione una opcion valida")
         opcion = input("Seleccione una opción (1/2): ")
-    return opcion
+    return int(opcion)
