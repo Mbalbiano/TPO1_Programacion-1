@@ -1,6 +1,14 @@
 #Ahorcado - Francesco Balbiano
-import random, re
-from funciones.salas.fn_sala1 import *
+import random
+from funciones.salas.fn_sala1 import * #importa todas las funciones que el juego necesita para funcionar
+
+"""
+Funcion juego_ahorcado
+Inicia el juego del ahorcado, en el cual el jugador debera de adivinar una palabra aleatoria ingresando una letra a la vez.
+Si la letra no se encuentra dentro de la palabra aleatoria, se le resta un intento. Si se queda sin intentos, se le pregunta si quiere intentarlo de nuevo o volver al menu principal.
+En caso de ganar el juego, se lo felicita y retorna al menu principal, ahora con la primera sala completa 
+"""
+
 
 def juego_ahorcado ():
     palabras_juego = ["timba","blackjack","dados","ruleta","fichas","poker","cartas","apuestas","noche","slots","tragaperras","casino"]
