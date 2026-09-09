@@ -14,6 +14,7 @@ def juego_ahorcado ():
     palabras_juego = ["timba","blackjack","dados","ruleta","fichas","poker","cartas","apuestas","noche","slots","tragaperras","casino"]
     palabra_seleccionada = (random.choice(palabras_juego))
     lista_palabra = palabra_visible_jugador(palabra_seleccionada)
+    gg = False
     
     #DATOS DEL JUGADOR
     error_max = 5
@@ -42,8 +43,11 @@ def juego_ahorcado ():
             letra = input("Ingrese una sola letra: ")
             validacion = validacion_input(letra,letras_usadas)
 
-        lista_palabra, error_max=apariciones_letra_en_palabra(letra,palabra_seleccionada,lista_palabra,error_max)
-        gg=verif_gg(lista_palabra,palabra_seleccionada) #Verifica si el jugador adivino la palabra
+        lista_palabra, error_max = apariciones_letra_en_palabra(letra,palabra_seleccionada,lista_palabra,error_max)
+        
+        gg = verif_gg(lista_palabra,palabra_seleccionada) #Verifica si el jugador adivino la palabra
+        if gg == True:
+            return gg 
 
         #Cuando se comete un error, se le resta 1 a la variable. cuando se queda sin errores sale del bucle
         print ("===================================")
@@ -55,3 +59,5 @@ def juego_ahorcado ():
     opcion = gameover()
     if opcion == 1: #hacemos que la funcion se llame a si misma para que lo vuelva a intentar
         juego_ahorcado()
+    else: 
+        return False
