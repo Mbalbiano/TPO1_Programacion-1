@@ -27,5 +27,5 @@ def menu():
         cambiar_contraseña()
     else:
         print("--Sesion cerrada--")
-        
-menu()
+if __name__ == "__main__":
+    menu()
