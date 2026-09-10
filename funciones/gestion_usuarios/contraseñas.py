@@ -104,3 +104,6 @@ def comprobar_contraseña (contraseña, contraseña_encriptada):
     else:
         print ("Contraseña incorrecta, intentelo nuevamente")
         return False
+     
+contraseña = "Unodos34%"
+usuario = "Jugador"
