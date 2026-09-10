@@ -1,6 +1,6 @@
-from contra import *
-from funciones.salas.fn_sala1 import *
-from funciones.salas.fn_sala2 import *
+from funciones.gestion_usuarios.contraseñas import *
+from salas.sala1 import juego_ahoracado
+from funciones.salas.fn_sala2 import jugar_batalla
 
 def menu():
     print("Coloque el numero correspondiete a la accion que desea tomar")
