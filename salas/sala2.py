@@ -40,7 +40,7 @@ def jugar_batalla():
     if resultado == -1:
         print("\n--PERDIÓ--")
         print("\n--DESEA VOLVER A INTENTAR?--")
-        opcion = int(input("1 Volver a intentarlo --- 2 Terminar el juego"))
+        opcion = int(input("1 Volver a intentarlo --- 2 Terminar el juego "))
         while opcion != 1 or opcion != 2:
             print("\n--DESEA VOLVER A INTENTAR?--")
             opcion = int(input("Seleccione una de estas opciones por favor: 1 Volver a intentarlo --- 2 Terminar el juego"))
