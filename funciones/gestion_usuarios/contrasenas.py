@@ -104,6 +104,16 @@ def comprobar_contraseña (contraseña, contraseña_encriptada):
     else:
         print ("Contraseña incorrecta, intentelo nuevamente")
         return False
+def cambiar_contraseña():
+    nueva = input("Nueva contraseña: ")
+    confirmacion = input("Confirmá la nueva contraseña: ")
+    
+    if validar_contraseña(nueva, confirmacion):
+        nueva_encriptada = encriptar_contraseña(nueva)
+        print("¡Contraseña actualizada con éxito!")
+        return nueva_encriptada
+    else:
+        cambiar_contraseña()
      
 contraseña = "Unodos34%"
 usuario = "Jugador"
