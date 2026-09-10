@@ -1,6 +1,6 @@
 from funciones.gestion_usuarios.contrasenas import *
 from salas.sala1 import juego_ahorcado
-from funciones.salas.fn_sala2 import jugar_batalla
+from salas.sala2 import jugar_batalla
 
 def menu():
     print("Coloque el numero correspondiete a la accion que desea tomar")
