@@ -1,5 +1,6 @@
 import random
 from funciones.salas.fn_sala2 import *
+from main import *
 
 
 
@@ -39,11 +40,15 @@ def jugar_batalla():
     
     if resultado == -1:
         print("\n--PERDIÓ--")
-        opcion = gameover()
-        if opcion == 1:
+        print("\n--DESEA VOLVER A INTENTAR?--")
+        opcion = int(input("1 Volver a intentarlo --- 2 Terminar el juego"))
+        while opcion != 1 or opcion != 2:
+            print("\n--DESEA VOLVER A INTENTAR?--")
+            opcion = int(input("Seleccione una de estas opciones por favor: 1 Volver a intentarlo --- 2 Terminar el juego"))
+        if opcion = 1:
             return jugar_batalla() # Vuelve a ejecutar la función si elige reintentar
         else:
-            return False # Retorna la sala como incompleta si decide volver al menú
+            return menu() # Retorna la sala como incompleta si selecciona terminar el juego
             
     return True # Retorna la sala como completada
 
