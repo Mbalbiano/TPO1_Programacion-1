@@ -1,6 +1,5 @@
 import random
 from funciones.salas.fn_sala2 import *
-from main import *
 
 
 
