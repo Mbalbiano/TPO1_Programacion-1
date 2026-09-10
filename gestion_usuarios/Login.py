@@ -1,4 +1,4 @@
-from funciones.gestion_usuarios.contraseñas import validar_contraseña
+from funciones.gestion_usuarios.contrasenas import validar_contraseña
 from gestion_usuarios.Menu import menu
 
 contraseña = "Unodos34%"
