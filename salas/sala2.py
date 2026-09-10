@@ -47,6 +47,7 @@ def jugar_batalla():
         if opcion == 1:
             return jugar_batalla() # Vuelve a ejecutar la función si elige reintentar
         else:
+            from gestion_usuarios.Menu import menu
             return menu() # Retorna la sala como incompleta si selecciona terminar el juego
             
     return True # Retorna la sala como completada
