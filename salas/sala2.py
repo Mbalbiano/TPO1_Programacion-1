@@ -45,7 +45,7 @@ def jugar_batalla():
         while opcion != 1 or opcion != 2:
             print("\n--DESEA VOLVER A INTENTAR?--")
             opcion = int(input("Seleccione una de estas opciones por favor: 1 Volver a intentarlo --- 2 Terminar el juego"))
-        if opcion = 1:
+        if opcion == 1:
             return jugar_batalla() # Vuelve a ejecutar la función si elige reintentar
         else:
             return menu() # Retorna la sala como incompleta si selecciona terminar el juego
