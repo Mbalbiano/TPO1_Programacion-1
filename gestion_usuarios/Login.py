@@ -1,4 +1,4 @@
-from contra import validar_contraseña
+from funciones.gestion_usuarios.contraseñas import validar_contraseñ
 
 contraseña = "Unodos34%"
 usuario = "Jugador"
